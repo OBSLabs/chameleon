@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <% @data.each do |panel| %>
+  <item>
+    <% if panel[:label] %>
+    <label>
+      <name><%= panel[:label][:name] %></name>
+      <color><%= panel[:label][:color] %></color>
+    </label>
+    <% end %>
+    <title>
+      <text><%= panel[:text] %></text>
+      <highlight><%= !!panel[:highlight] %></highlight>
+    </title>
+    <% if panel[:description] %>
+    <description><%= panel[:description] %></description>
+    <% end %>
+  </item>
+  <% end %>
+</root>
